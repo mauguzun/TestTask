@@ -1,12 +1,12 @@
 ﻿using Azure;
 using Azure.Data.Tables;
 
-namespace TestTask.Core.Entites
+namespace TestTask.Domain.Entites
 {
     public class WeatherLog : ITableEntity
     {
         public WeatherLog() { }
-        public WeatherLog(string rowKey, int statusCode)  => ( RowKey, StatusCode) = ( rowKey, statusCode);
+        public WeatherLog(string rowKey, int statusCode) => (RowKey, StatusCode) = (rowKey, statusCode);
 
         public string PartitionKey { get; set; } = "London";
         public string RowKey { get; set; }

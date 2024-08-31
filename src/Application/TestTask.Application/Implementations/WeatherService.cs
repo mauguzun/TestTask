@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Net;
 using TestTask.Application.Inerfaces;
-using TestTask.Core.Entites;
+using TestTask.Domain.Entites;
 using TestTask.Infrastructure.Inerfaces.Repositories;
 using TestTask.Infrastructure.Inerfaces.Services;
 

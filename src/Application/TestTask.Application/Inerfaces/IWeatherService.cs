@@ -1,5 +1,5 @@
 ﻿using OneOf;
-using TestTask.Core.Entites;
+using TestTask.Domain.Entites;
 
 namespace TestTask.Application.Inerfaces
 {

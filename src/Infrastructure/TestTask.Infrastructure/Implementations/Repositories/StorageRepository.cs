@@ -1,7 +1,7 @@
 ﻿using Azure;
 using Azure.Data.Tables;
 using Microsoft.Extensions.Configuration;
-using TestTask.Core.Entites;
+using TestTask.Domain.Entites;
 using TestTask.Infrastructure.Inerfaces.Repositories;
 
 namespace TestTask.Infrastructure.Implementations.Repositories

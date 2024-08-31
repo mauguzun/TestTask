@@ -1,6 +1,5 @@
 ﻿using Azure;
-using Azure.Data.Tables;
-using TestTask.Core.Entites;
+using TestTask.Domain.Entites;
 
 namespace TestTask.Infrastructure.Inerfaces.Repositories
 {
