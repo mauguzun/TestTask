@@ -1,7 +1,6 @@
-﻿namespace TestTask.Infrastructure.Inerfaces.Services
+﻿namespace TestTask.Infrastructure.Inerfaces.Services;
+
+public interface IOpenWeatherService
 {
-    public interface IOpenWeatherService
-    {
-        public Task<HttpResponseMessage> GetWeatherAsync(string location, CancellationToken cancellationToken);
-    }
+    public Task<HttpResponseMessage> GetWeatherAsync(string location, CancellationToken cancellationToken);
 }

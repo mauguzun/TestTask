@@ -1,7 +1,7 @@
-﻿using Microsoft.Azure.Functions.Extensions.DependencyInjection;
+﻿using System.IO;
+using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.IO;
 using TestTask.Api.AzureFunctions;
 using TestTask.Application.Implementations;
 using TestTask.Application.Inerfaces;
@@ -13,13 +13,14 @@ using TestTask.Infrastructure.Inerfaces.Services;
 [assembly: FunctionsStartup(typeof(Startup))]
 
 namespace TestTask.Api.AzureFunctions;
+
 public class Startup : FunctionsStartup
 {
     public override void Configure(IFunctionsHostBuilder builder)
     {
         var configuration = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("local.settings.json", optional: true, reloadOnChange: true)
+            .AddJsonFile("local.settings.json", true, true)
             .AddEnvironmentVariables()
             .Build();
 
@@ -32,6 +33,5 @@ public class Startup : FunctionsStartup
         builder.Services.AddScoped<IOpenWeatherService, OpenWeatherService>();
         // application
         builder.Services.AddScoped<IWeatherService, WeatherService>();
-
     }
 }
