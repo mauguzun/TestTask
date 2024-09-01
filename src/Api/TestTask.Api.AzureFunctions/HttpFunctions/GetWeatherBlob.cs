@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using TestTask.Application.Inerfaces;
 
-namespace JustForTest
+namespace TestTask.Api.AzureFunctions.HttpFunctions
 {
     public class GetWeatherBlob
     {
@@ -17,10 +17,10 @@ namespace JustForTest
         public async Task<IActionResult> Run(
         [HttpTrigger(AuthorizationLevel.Function, "get", Route = "GetWeatherBlob/{id}")] HttpRequest req,
         string id,
-        CancellationToken cancellationToken)=>
-            (await _weatherService.GetPayload(id, cancellationToken)) is string payload
+        CancellationToken cancellationToken) =>
+            await _weatherService.GetPayload(id, cancellationToken) is string payload
             ? new OkObjectResult(payload)
             : new NotFoundObjectResult($"Result with {id} not found");
-      
+
     }
 }

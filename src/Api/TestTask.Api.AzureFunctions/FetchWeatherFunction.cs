@@ -2,7 +2,6 @@ using Microsoft.Azure.WebJobs;
 using System.Threading;
 using System.Threading.Tasks;
 using TestTask.Application.Inerfaces;
-using TestTask.Infrastructure.Inerfaces.Services;
 
 namespace TestTask.Api.AzureFunctions
 {
@@ -17,7 +16,7 @@ namespace TestTask.Api.AzureFunctions
             CancellationToken cancellationToken)
         {
             string location = "london,uk"; //can get somewhere 
-             await _weatherService.FetchAndStoreWeatherDataAsync(location, cancellationToken);
+            await _weatherService.FetchAndStoreWeatherDataAsync(location, cancellationToken);
 
         }
     }

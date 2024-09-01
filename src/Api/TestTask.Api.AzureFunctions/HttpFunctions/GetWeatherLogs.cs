@@ -2,14 +2,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using OneOf.Types;
-using System;
-using System.Globalization;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using TestTask.Application.Inerfaces;
-namespace JustForTest
+namespace TestTask.Api.AzureFunctions.HttpFunctions
 {
     public class GetWeatherLogs
     {

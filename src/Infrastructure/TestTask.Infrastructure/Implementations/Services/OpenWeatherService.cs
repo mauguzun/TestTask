@@ -8,7 +8,7 @@ namespace TestTask.Infrastructure.Implementations.Services
         private readonly string _apiKey;
         private readonly int _timeout;
         public OpenWeatherService(IConfiguration configuration)=>
-            (_apiKey, _timeout) = (configuration["ApiKey"], configuration.GetValue<int>("TimeOut"));
+            (_apiKey, _timeout) = (configuration["ApiKey"], configuration.GetValue<int>("HttpClientTimeout"));
 
         public async Task<HttpResponseMessage> GetWeatherAsync(string location, CancellationToken cancellationToken)
         {
